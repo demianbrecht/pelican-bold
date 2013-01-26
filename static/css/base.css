@@ -24,10 +24,27 @@ h1, h2, h3, h4 {
     background-color: #000;
     color: #fff;
     padding: 0 0.6em;
+    margin: 0;
 }
 a {
     color: #fff;
     text-decoration: none;
+}
+
+.lfloat { float: left; }
+.rfloat { float: right; }
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+}
+.clearfix {
+    display: block;
 }
 
 #wrap {
@@ -40,13 +57,16 @@ a {
     margin-top: 70px;
 }
 
-#header h2:nth-child(1) {
+header {
+    margin: 50px 0 100px 0;
+}
+header h2:nth-child(1) {
     box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.3); 
 }
-#header h2:nth-child(2) { 
+header h2:nth-child(2) { 
     position: relative;
     z-index: -1;
-    top: -95px;
+    top: -15px;
     text-align: right;
 }
 
@@ -58,10 +78,17 @@ footer {
 }
 footer h4 {
     font-family: 'Ubuntu'; 
-    margin: 0; padding: 0;
+    margin: 0 0 10px 0; padding: 0;
+}
+
+footer .wrap {
+    width: 850px;
+    margin: 0 auto;
+    padding-top: 20px;
 }
 
 nav {
+    margin-top: 30px;
     width: 140px;
 }
 ul.pages { margin-bottom: 20px; }
@@ -69,10 +96,10 @@ ul.pages li {
     text-align: right; 
     position: relative;
     -webkit-transition-property: left;
-    -webkit-transition-duration: .5s;
+    -webkit-transition-duration: .2s;
 }
 ul.pages li:hover {
-    left: -15px;
+    left: -5px;
 }
 ul.pages li:nth-child(odd) {
     -webkit-transform: rotate(-3deg);
@@ -85,6 +112,25 @@ ul.pages li h3 {
     margin: 3px 0; 
     display: inline-block; 
     font-size: 1.5em; 
+}
+
+section {
+    margin-left: 200px;
+}
+section > h1 {
+    display: inline-block;
+    font-size: 2.0em;
+    margin-bottom: 30px;
+}
+section h2 {
+    margin: 0; padding: 0;
+    color: #000;
+    font-size: 2em;
+    background: none;
+}
+
+article > h2 > a {
+    color: #000;
 }
 
 h2 { font-size: 4em; display: inline-block; } 
@@ -100,7 +146,7 @@ ul { list-style-type: none; margin: 0; padding: 0; }
 .social { 
     padding: 5px; 
 }
-.social, .social a { width: 50px; height: 50px; }
+.social, .social a { width: 32px; height: 32px; }
 .social a { 
     display: inline-block; 
     background-repeat: no-repeat; 

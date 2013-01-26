@@ -9,34 +9,42 @@
     </head>
     <body>
         <div id="wrap">
-            <div id="header">
+            <header>
                 {% if SUBTITLE %}
                     <h2 class="lrot">{{ SUBTITLE[0] }}</h2>
                     <h2 class="rrot rfloat">{{ SUBTITLE[1] }}</h2>
                 {% endif %}
-            </div>
-            <div id="content">
-                <nav>
-                {% if DISPLAY_PAGES_ON_MENU %}
-                    <ul class="pages">
-                        <li><h3><a href="{{ SITEURL }}">blog</a></h3></li>
-                    {% for page in PAGES %}
-                        <li><h3><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></h3></li>
+            </header>
+            <div id="content" class="clearfix">
+                <nav class="lfloat">
+                    {% if DISPLAY_PAGES_ON_MENU %}
+                        <ul class="pages">
+                            <li><h3><a href="{{ SITEURL }}">blog</a></h3></li>
+                        {% for page in PAGES|sort(attribute='filename') %}
+                            <li><h3><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></h3></li>
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                    <ul>
+                    {% for link in SOCIAL %}
+                        <li class="social rfloat"><a href="{{ link[1] }}" target="new"></a></li>
                     {% endfor %}
                     </ul>
-                {% endif %}
-                {% include "social.html" %}
                 </nav>
-                {% block content %}{% endblock %}
+                <section>
+                    {% block content %}{% endblock %}
+                </section>
             </div>
         </div>
         <footer>
-            <h4>Pages</h4>
-            <ul>
-                {% for page in PAGES %}
-                    <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-                {% endfor %}
-            </ul>
+            <div class="wrap">
+                <h4>Pages</h4>
+                <ul>
+                    {% for page in PAGES %}
+                        <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
         </footer>
     </body>
 </html>
