@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Blog</h1>
 {% for article in articles_page.object_list %}
     <article>
-    <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
-    <p>{{ article.summary }}</p>
+        <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+        <div class="summary">
+            {{ article.summary }}
+        </div>
     </article>
+    <hr/>
 {% endfor %}
 {% endblock %}

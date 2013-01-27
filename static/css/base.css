@@ -21,16 +21,22 @@ body {
 }
 h1, h2, h3, h4 {
     font-family: 'Holtwood One SC';
-    background-color: #000;
-    color: #fff;
-    padding: 0 0.6em;
-    margin: 0;
+    margin: 0; padding: 0;
 }
 a {
-    color: #fff;
+    color: #F36C00;
     text-decoration: none;
 }
+ul { list-style-type: none; margin: 0; padding: 0; }
+hr { 
+    margin: 20px 10px; 
+    background-color: #ccc;
+    height: 1px;
+    border: 0;
+}
 
+
+/* UTILITY CLASSES */
 .lfloat { float: left; }
 .rfloat { float: right; }
 .clearfix:after {
@@ -47,95 +53,122 @@ a {
     display: block;
 }
 
-#wrap {
+.wrapper {
     min-height: 100%;
     margin: 0 auto;
     width: 1000px;
 }
-#content { 
+.body { 
     padding-bottom: 175px; 
-    margin-top: 70px;
+    margin-top: 90px;
 }
 
-header {
+/******** HEADER ********/
+.wrapper > header {
     margin: 50px 0 100px 0;
 }
-header h2:nth-child(1) {
+.wrapper > header > h1 { 
+    font-size: 4em;
+}
+.wrapper > header h1:nth-child(1) {
     box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.3); 
 }
-header h2:nth-child(2) { 
+.wrapper > header h1:nth-child(2) { 
     position: relative;
     z-index: -1;
     top: -15px;
     text-align: right;
 }
 
-footer {
+/******** FOOTER ********/
+body > footer {
     position: relative;
-    height: 175px;
-    top: -175px;
+    height: 160px;
+    top: -160px;
     background-color: #111;
 }
-footer h4 {
+body > footer a {
+    color: #fff;
+}
+body > footer h4 {
     font-family: 'Ubuntu'; 
     margin: 0 0 10px 0; padding: 0;
+    color: #fff;
+}
+body > footer > div.wrap > div {
+    margin-right: 100px;
 }
 
-footer .wrap {
+body > footer .wrap {
     width: 850px;
     margin: 0 auto;
     padding-top: 20px;
 }
 
+/* NAV */
 nav {
-    margin-top: 30px;
     width: 140px;
 }
-ul.pages { margin-bottom: 20px; }
-ul.pages li { 
-    text-align: right; 
+nav > ul.content > li {
+    margin: 3px 0;
+    text-align: right;
+}
+nav > ul.content > li > h3 > a { 
     position: relative;
     -webkit-transition-property: left;
     -webkit-transition-duration: .2s;
 }
-ul.pages li:hover {
+nav > ul.content > li:hover > h3 > a {
     left: -5px;
 }
-ul.pages li:nth-child(odd) {
+nav > ul.content > li:nth-child(odd) {
     -webkit-transform: rotate(-3deg);
 }
-ul.pages li:nth-child(even) {
+nav > ul.content > li:nth-child(even) {
     -webkit-transform: rotate(3deg);
-    position: relative;
 }
-ul.pages li h3 {
-    margin: 3px 0; 
-    display: inline-block; 
+nav > ul.content > li.active {
+    -webkit-transform: rotate(0);
+}
+h3 {
     font-size: 1.5em; 
 }
 
-section {
-    margin-left: 200px;
+.body > .content {
+    margin-left: 180px;
 }
-section > h1 {
+
+.content > h1 {
+    margin-bottom: 20px !important;
+}
+.stamp,
+.stamp,
+.stamp {
+    background-color: #000;
+    color: #fff;
+    margin: 0; padding: 0 0.6em;
     display: inline-block;
-    font-size: 2.0em;
-    margin-bottom: 30px;
-}
-section h2 {
-    margin: 0; padding: 0;
-    color: #000;
-    font-size: 2em;
-    background: none;
 }
 
-article > h2 > a {
-    color: #000;
+article > h2,
+h2.entry-title > h2 {
+    font-size: 1.8em;
 }
-
-h2 { font-size: 4em; display: inline-block; } 
-h4 { display: inline-block; }
-ul { list-style-type: none; margin: 0; padding: 0; }
+article > h2 > a,
+h2.entry-title > a {
+    color: #000;
+    -webkit-transition-property: color text-shadow;
+    -webkit-transition-duration: .2s;
+}
+article > h2 > a:hover, 
+h2.entry-title > a:hover {
+    color: #F36C00;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+article > div.summary,
+div.entry-content {
+    margin: 10px 15px;
+}
 
 .lrot { -webkit-transform: rotate(-5deg); }
 .rrot { -webkit-transform: rotate(5deg); }
@@ -144,7 +177,7 @@ ul { list-style-type: none; margin: 0; padding: 0; }
 .float { float: left; }
 
 .social { 
-    padding: 5px; 
+    padding: 5px 0 5px 5px; 
 }
 .social, .social a { width: 32px; height: 32px; }
 .social a { 

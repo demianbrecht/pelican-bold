@@ -1,0 +1,29 @@
+<nav class="lfloat">
+    <ul class="content rfloat">
+    {% for cat, _ in categories %}
+        {% if cat != category %}
+            <li><h3><a class="stamp" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></h3></li>
+        {% else %}
+            <li class="active"><h3>{{ cat }}</h3></li>
+        {% endif %}
+    {% endfor %}
+    {% if DISPLAY_PAGES_ON_MENU %}
+        {% for p in pages|sort(attribute='filename') %}
+            {% if page %}
+                {% if p.title != page.title or not page %}
+                    <li><h3><a class="stamp" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></h3></li>
+                {% else %}
+                    <li class="active"><h3>{{ p.title }}</h3></li>
+                {% endif %}
+            {% else %}
+                <li><h3><a class="stamp" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></h3></li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    {% endif %}
+    <ul>
+    {% for link in SOCIAL %}
+        <li class="social rfloat"><a href="{{ link[1] }}" target="new"></a></li>
+    {% endfor %}
+    </ul>
+</nav>
