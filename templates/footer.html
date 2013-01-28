@@ -1,20 +1,17 @@
-<footer>
-    <div class="wrap clearfix">
-        <div class="lfloat">
-            <h4>pages</h4>
-            <ul>
-                {% for page in PAGES %}
-                    <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="lfloat">
-            <h4>categories</h4>
-            <ul>
-                {% for cat, _ in categories %}
-                    <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-                {% endfor %}
-        </div>
+<div class="wrap clearfix">
+    <div class="lfloat">
+        <h4>pages</h4>
+        <ul>
+            {% for page in PAGES %}
+                <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+            {% endfor %}
+        </ul>
     </div>
-</footer>
-
+    <div class="lfloat">
+        <h4>categories</h4>
+        <ul>
+            {% for cat, _ in categories %}
+                <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+            {% endfor %}
+    </div>
+</div>
