@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% set idx = 0 %}
 {% for article in articles_page.object_list %}
     <article>
-        <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-        <div class="summary">
-            {{ article.summary }}
-        </div>
+        <header>
+            <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+            <small>{{ article.locale_date }}</small>
+        </header>
+        {{ article.summary }}
     </article>
+    {% set idx = idx + 1 %}
+    {% if idx < articles_page.object_list|length %}
     <hr/>
+    {% endif %}
 {% endfor %}
 {% endblock %}

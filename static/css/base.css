@@ -15,7 +15,7 @@ html, body { height: 100%; }
 body { 
     font-family: 'Ubuntu'; 
     background-image: url(../images/bg.png);
-    font-size: 12px;
+    font-size: 14px;
     margin: 0;
     padding: 0;
 }
@@ -74,7 +74,7 @@ hr {
 .wrapper > header h1:nth-child(2) { 
     position: relative;
     z-index: -1;
-    top: -15px;
+    top: -5px;
     text-align: right;
 }
 
@@ -104,19 +104,19 @@ body > footer .wrap {
 }
 
 /* NAV */
-nav { width: 140px; text-align: right; }
+nav { width: 200px; text-align: right; }
 nav > ul { list-style-type: none; margin: 0; padding: 0; }
 nav > ul > li { position: relative; -webkit-transition-property: left; -webkit-transition-duration: .2s; }
 nav > ul > li:hover:not(.active) { left: -10px; }
 nav > ul > li.active { left: -10px; }
-nav > ul > li > a { color: #fff; font-family: 'Holtwood One SC';  font-size: 1.2em; }
+nav > ul > li > a { color: #fff; font-family: 'Holtwood One SC';  font-size: 1.5em; }
 nav > ul > li.active { -webkit-transform: rotate(0) !important; }
 nav > ul > li.active > a { color: #000; }
 nav > ul.links > li:nth-child(odd) { -webkit-transform: rotate(-3deg); }
 nav > ul.links > li:nth-child(even) { -webkit-transform: rotate(3deg); }
 
 .body > .content {
-    margin-left: 180px;
+    margin-left: 220px;
 }
 
 .stamp {
