@@ -27,7 +27,6 @@ a {
     color: #F36C00;
     text-decoration: none;
 }
-ul { list-style-type: none; margin: 0; padding: 0; }
 hr { 
     margin: 20px 10px; 
     background-color: #ccc;
@@ -105,64 +104,43 @@ body > footer .wrap {
 }
 
 /* NAV */
-nav {
-    width: 140px;
-}
-nav > ul.content > li {
-    margin: 3px 0;
-    text-align: right;
-}
-nav > ul.content > li > h3 > a { 
-    position: relative;
-    -webkit-transition-property: left;
-    -webkit-transition-duration: .2s;
-}
-nav > ul.content > li:hover > h3 > a {
-    left: -5px;
-}
-nav > ul.content > li:nth-child(odd) {
-    -webkit-transform: rotate(-3deg);
-}
-nav > ul.content > li:nth-child(even) {
-    -webkit-transform: rotate(3deg);
-}
-nav > ul.content > li.active {
-    -webkit-transform: rotate(0);
-}
-h3 {
-    font-size: 1.5em; 
-}
+nav { width: 140px; text-align: right; }
+nav > ul { list-style-type: none; margin: 0; padding: 0; }
+nav > ul > li { position: relative; -webkit-transition-property: left; -webkit-transition-duration: .2s; }
+nav > ul > li:hover:not(.active) { left: -10px; }
+nav > ul > li.active { left: -10px; }
+nav > ul > li > a { color: #fff; font-family: 'Holtwood One SC';  font-size: 1.2em; }
+nav > ul > li.active { -webkit-transform: rotate(0) !important; }
+nav > ul > li.active > a { color: #000; }
+nav > ul.links > li:nth-child(odd) { -webkit-transform: rotate(-3deg); }
+nav > ul.links > li:nth-child(even) { -webkit-transform: rotate(3deg); }
 
 .body > .content {
     margin-left: 180px;
 }
 
-.content > h1 {
-    margin-bottom: 20px !important;
-}
-.stamp,
-.stamp,
 .stamp {
     background-color: #000;
     color: #fff;
     margin: 0; padding: 0 0.6em;
-    display: inline-block;
 }
 
-article > h2,
-h2.entry-title > h2 {
+article > h1
+{
     font-size: 1.8em;
 }
-article > h2 > a,
-h2.entry-title > a {
+article > h1 > a
+{
     color: #000;
     -webkit-transition-property: color text-shadow;
     -webkit-transition-duration: .2s;
 }
-article > h2 > a:hover, 
-h2.entry-title > a:hover {
+article > h2 > a:hover {
     color: #F36C00;
     text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+article > div.content {
+    margin: 20px 10px; 
 }
 article > div.summary,
 div.entry-content {

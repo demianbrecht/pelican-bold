@@ -10,9 +10,11 @@
     <body>
         <div class="wrapper">
             <header>
-                {% if SITESUBTITLE %}
-                    <h1 class="stamp lrot">{{ SITESUBTITLE[0] }}</h1>
-                    <h1 class="stamp rrot rfloat">{{ SITESUBTITLE[1] }}</h1>
+                {% if SITESUBTITLES %}
+                    <h1 class="stamp lrot">{{ SITESUBTITLES[0] }}</h1>
+                    <h1 class="stamp rrot rfloat">{{ SITESUBTITLES[1] }}</h1>
+                {% else %}
+                    <h1 class="stamp lrot">{{ SITESUBTITLE }}</h1>
                 {% endif %}
             </header>
             <div class="body clearfix">
