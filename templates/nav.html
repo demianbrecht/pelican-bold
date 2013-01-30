@@ -2,22 +2,13 @@
     <ul class="links">
     {% for cat, _ in categories %}
     <li{% if cat == category %} class="active"{% endif %}>
-        <a class="{% if cat != category %}stamp{% endif %}" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+        <a {% if not cat == category %}class="stamp"{% endif %} href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
     </li>
     {% endfor %}
     {% if DISPLAY_PAGES_ON_MENU %}
         {% for p in pages|sort(attribute='filename') %}
-            {#
-                note: we can't just do this inline as above because it's valid
-                      that page is undefined, whereas category is always defined.
-            #}
-            {% if page and p.title == page.title %}
-                {% set cls = 'active' %}
-            {% else %}
-                {% set cls = 'stamp' %}
-            {% endif %}
             <li{% if page and p.title == page.title %} class="active"{% endif %}>
-                <a{% if not page or p.title != page.title %} class="stamp"{% endif %} href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
+                <a{% if not page or not p.title == page.title %} class="stamp"{% endif %} href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
             </li>
         {% endfor %}
     </ul>
