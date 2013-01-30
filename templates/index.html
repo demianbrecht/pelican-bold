@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1 class="stamp">{{ category }}{{ tag }}</h1>
 {% set idx = 0 %}
 {% for article in articles_page.object_list %}
     <article>

@@ -2,13 +2,13 @@
 <html lang="{{ DEFAULT_LANG }}">
     <head>
         {% block head %}
-        <title>{{ SITENAME }}</title>
+        <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
         <meta charset="utf-8" />
         {% endblock head %}
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/base.css" />
     </head>
     <body>
-        <section>
+        <div class="wrapper">
             <header>
                 {% if SITESUBTITLES %}
                     <h1 class="stamp lrot">{{ SITESUBTITLES[0] }}</h1>
@@ -21,7 +21,7 @@
             <div class="content">
                 {% block content %}{% endblock %}
             </div>
-        </section>
+        </div>
         {% include 'analytics.html' %}
     </body>
 </html>
