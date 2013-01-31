@@ -77,7 +77,7 @@ body > div.wrapper > header h1:nth-child(2) {
 nav { width: 200px; text-align: right; }
 nav > ul { list-style-type: none; margin: 0; padding: 0; }
 nav > ul > li { position: relative; transition-property: left; -webkit-transition-property: left; transition-duration: .2s; -webkit-transition-duration: .2s; }
-nav > ul > li:hover:not(.active) { left: -10px; }
+nav > ul.links > li:hover:not(.active) { left: -10px; }
 nav > ul > li.active { left: -10px; }
 nav > ul > li > a { color: #fff; font-family: 'Holtwood One SC';  font-size: 1.5em; }
 nav > ul > li.active { transform: rotate(0) !important; -webkit-transform: rotate(0) !important; }
@@ -144,10 +144,12 @@ article h2 {
 .float { float: left; }
 
 ul.social { 
+    margin-top: 20px;
     padding: 5px 0 5px 5px; 
 }
-ul.social, ul.social a { width: 32px; height: 32px; }
-ul.social a { 
+ul.social > li { display: inline-block; }
+ul.social > li > a { 
+    width: 32px; height: 32px;
     display: inline-block; 
     background-repeat: no-repeat; 
     opacity: 0.3; 
