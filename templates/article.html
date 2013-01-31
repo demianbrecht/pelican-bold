@@ -8,10 +8,11 @@
         </h1>
     </header>
     <footer>
-        <div class="social">
-            {% include 'twitter.html' %}
-            {% include 'plus_one.html' %}
-        </div>
+        <ul class="socialbtn">
+            <li>{% include 'plus_one.html' %}</li>
+            <li>{% include 'twitter.html' %}</li>
+        </ul>
+        {{ article.locale_date }}
         {% if article.author %}
         <address>
             <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>

@@ -1,79 +1,38 @@
-@font-face {
-    font-family: 'Holtwood One SC';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Holtwood One SC'), local('HoltwoodOneSC'), url(/theme/fonts/holtwoodonesc.woff) format('woff');
-}
-@font-face {
-    font-family: 'Ubuntu';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Ubuntu'), url(/theme/fonts/ubuntu.woff) format('woff');
-}
+/******** FONTS ********/
+@font-face { font-family: 'Holtwood One SC'; font-style: normal; font-weight: 400; src: local('Holtwood One SC'), local('HoltwoodOneSC'), url(/theme/fonts/holtwoodonesc.woff) format('woff'); }
+@font-face { font-family: 'Ubuntu'; font-style: normal; font-weight: 400; src: local('Ubuntu'), url(/theme/fonts/ubuntu.woff) format('woff'); }
 
-html, body { height: 100%; }
-body { 
-    min-height: 100%;
-    font-family: 'Ubuntu'; 
-    background-image: url(../images/bg.png);
-    font-size: 13px;
-}
-h1, h2, h3, h4 {
-    font-family: 'Holtwood One SC';
-    margin: 0; padding: 0;
-    display: inline-block;
-}
-a {
-    color: #F36C00;
-    text-decoration: none;
-}
-hr { 
-    margin: 20px 10px; 
-    background-color: #ccc;
-    height: 1px;
-    border: 0;
-}
+/******** BUILT-INS ********/
+html, body { height: 100%; margin: 0; padding: 0; }
+p { padding: 0; margin: 10px 0; }
+body { min-height: 100%; font-family: 'Ubuntu'; background-image: url(../images/bg.png); font-size: 13px; }
+h1, h2, h3, h4 { font-family: 'Holtwood One SC'; margin: 0; padding: 0; display: inline-block; }
+a { color: #F36C00; text-decoration: none; }
+hr { background-color: #ccc; height: 1px; border: 0; }
 
 /* UTILITY CLASSES */
 .lfloat { float: left; }
 .rfloat { float: right; }
-.clearfix:after {
-    clear: both;
-    content: ".";
-    display: block;
-    height: 0;
-    visibility: hidden;
-}
-.clearfix {
-    display: inline-block;
-}
-.clearfix {
-    display: block;
-}
+.clearfix:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+.clearfix { display: inline-block; }
+.clearfix { display: block; }
 
 body > div.wrapper {
     width: 1000px;
     margin: 0 auto;
+    min-height: 100%;
+}
+section.content {
+    padding-bottom: 170px;
 }
 
 /******** HEADER ********/
-body > div.wrapper > header {
-    padding: 50px 0 100px 0;
-}
-body > div.wrapper > header > h1 { 
-    font-size: 4em;
-}
-body > div.wrapper > header h1:nth-child(1) {
-    box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.3); 
-}
-body > div.wrapper > header h1:nth-child(2) { 
-    position: relative;
-    z-index: -1;
-    top: -5px;
-    text-align: right;
-}
+header.site-title { padding: 50px 0 100px 0; }
+header.site-title > h1 { font-size: 4em; }
+header.site-title > h1:nth-child(1) { box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.3); }
+header.site-title > h1:nth-child(2) { position: relative; z-index: -1; top: -5px; text-align: right; }
 
-/* NAV */
+/******* NAV ********/
 nav { width: 200px; text-align: right; }
 nav > ul { list-style-type: none; margin: 0; padding: 0; }
 nav > ul > li { position: relative; transition-property: left; -webkit-transition-property: left; transition-duration: .2s; -webkit-transition-duration: .2s; }
@@ -85,9 +44,26 @@ nav > ul > li.active > a { color: #000; }
 nav > ul.links > li:nth-child(odd) { transform: rotate(-3deg); -webkit-transform: rotate(-3deg); }
 nav > ul.links > li:nth-child(even) { transform: rotate(3deg); -webkit-transform: rotate(3deg); }
 
-body > div.wrapper > div.content {
+/******* FOOTER ********/
+footer.site { position: relative; top: -150px; height: 150px; background-color: #000; color: #fff; }
+footer.site > div { width: 900px; margin: 0 auto; padding-top: 20px; }
+footer.site section.lfloat { margin-right: 50px; }
+footer.site ul { list-style-type: none; margin: 0; padding: 0; }
+footer.site ul lh { line-height: 1.5em; } 
+footer.site p { margin: 0; padding: 0; }
+footer.site { font-size: 0.9em; }
+
+
+section.content {
     margin-left: 220px;
 }
+section.content > div.body { margin: 0 10px; }
+
+ol.article-list {
+    list-style-type: none;
+    margin: 0; padding: 0;
+}
+ol.article-list > li { border-bottom: 1px solid #ccc; }
 
 ul.tags {
     list-style-type: none;
@@ -108,11 +84,14 @@ article > footer > div.social {
     margin: 0; padding: 0 0.6em;
 }
 
+article { padding: 10px 0; }
 article > header > h1
 {
     font-size: 1.9em;
 }
-article > header > h1 > a
+article > header > h1 > a,
+article h2 > a
+
 {
     color: #000;
     transition-property: color text-shadow;
@@ -120,22 +99,27 @@ article > header > h1 > a
     -webkit-transition-property: color text-shadow;
     -webkit-transition-duration: .2s;
 }
-article > header > h1 > a:hover {
+article > header > h1 > a:hover,
+article h2 > a:hover{
     color: #F36C00;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
 }
-article > div.content {
+article > div.summary {
     margin: 20px 15px;
 }
+article > div.content {
+    margin: 0 15px;
+}
 article > footer {
-    margin: 0px 15px;
     font-size: 0.8em;
+    margin: 0 15px;
     color: #666;
 }
 article h2 {
-    margin: 20px 0;
+    margin: 5px 0;
 }
 
+p.paginator { text-align: right; }
 
 .lrot { transform: rotate(-5deg); -webkit-transform: rotate(-5deg); }
 .rrot { transform: rotate(3deg); -webkit-transform: rotate(3deg); }
@@ -143,21 +127,11 @@ article h2 {
 .rfloat { float: right; }
 .float { float: left; }
 
-ul.social { 
-    margin-top: 20px;
-    padding: 5px 0 5px 5px; 
-}
+ul.socialbtn { list-style-type: none; padding: 0; margin: 0 0 10px 0; }
+
+ul.social { margin-top: 20px; padding: 5px 0 5px 5px; }
 ul.social > li { display: inline-block; }
-ul.social > li > a { 
-    width: 32px; height: 32px;
-    display: inline-block; 
-    background-repeat: no-repeat; 
-    opacity: 0.3; 
-    transition-property: opacity;
-    transition-duration: .5s;
-    -webkit-transition-property: opacity; 
-    -webkit-transition-duration: .5s;
-}
+ul.social > li > a { width: 32px; height: 32px; display: inline-block; background-repeat: no-repeat; opacity: 0.3; transition-property: opacity; transition-duration: .5s; -webkit-transition-property: opacity; -webkit-transition-duration: .5s; }
 ul.social a:hover { opacity: 1; } 
 
 /* Icons */

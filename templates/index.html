@@ -1,21 +1,30 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<h1 class="stamp">{{ category }}{{ tag }}</h1>
-{% set idx = 0 %}
-{% for article in articles_page.object_list %}
-    <article>
-        <header>
-            <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
-        </header>
-        <footer>
-            {{ article.locale_date }} | <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread"</a>comments</a>
-        </footer>
-        <div class="content">{{ article.summary }}</div>
-    </article>
-    {% set idx = idx + 1 %}
-    {% if idx < articles_page.object_list|length %}
-    <hr/>
+{% block section_title %}
+    {% if category %}
+        {{ category }}
+    {% elif tag %}
+        {{ tag }}
+    {% else %}
+        All Posts
     {% endif %}
+{% endblock %}
+
+{% block content %}
+<ol class="article-list">
+{% for article in articles_page.object_list %}
+    <li>
+        <article>
+            <header>
+                <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+            </header>
+            <footer>
+                {{ article.locale_date }} | <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread"</a>comments</a>
+            </footer>
+            <div class="content">{{ article.summary }}</div>
+        </article>
+    </li>
 {% endfor %}
+</ol>
+{% include 'pagination.html' %}
 {% endblock %}

@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="wrapper">
-            <header>
+            <header class="site-title">
                 {% if SITESUBTITLES %}
                     <h1 class="stamp lrot">{{ SITESUBTITLES[0] }}</h1>
                     <h1 class="stamp rrot rfloat">{{ SITESUBTITLES[1] }}</h1>
@@ -18,10 +18,16 @@
                 {% endif %}
             </header>
             {% include 'nav.html' %}
-            <div class="content">
-                {% block content %}{% endblock %}
-            </div>
+            <section class="content">
+                <h1 class="stamp">{% block section_title %}{% endblock %}</h1>
+                <div class="body">
+                    {% block content %}{% endblock %}
+                </div>
+            </section>
         </div>
+        <footer class="site">
+            {% include 'footer.html' %}
+        </footer>
         {% include 'analytics.html' %}
     </body>
 </html>
