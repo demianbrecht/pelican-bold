@@ -22,9 +22,6 @@ body > div.wrapper {
     margin: 0 auto;
     min-height: 100%;
 }
-section.content {
-    padding-bottom: 170px;
-}
 
 /******** HEADER ********/
 header.site-title { padding: 50px 0 100px 0; }
@@ -46,7 +43,7 @@ nav > ul.links > li:nth-child(even) { transform: rotate(3deg); -webkit-transform
 
 /******* FOOTER ********/
 footer.site { position: relative; top: -150px; height: 150px; background-color: #000; color: #fff; }
-footer.site > div { width: 900px; margin: 0 auto; padding-top: 20px; }
+footer.site > div { width: 1000px; margin: 0 auto; padding-top: 20px; }
 footer.site section.lfloat { margin-right: 50px; }
 footer.site ul { list-style-type: none; margin: 0; padding: 0; }
 footer.site ul lh { line-height: 1.5em; } 
@@ -56,6 +53,7 @@ footer.site { font-size: 0.9em; }
 
 section.content {
     margin-left: 220px;
+    padding-bottom: 170px;
 }
 section.content > div.body { margin: 0 10px; }
 
@@ -77,6 +75,7 @@ ul.tags > li {
 article > footer > div.social {
     margin-bottom: 10px;
 }
+article > div.content > div.section > h2 { margin: 20px 0 0 0; }
 
 .stamp {
     background-color: #000;
@@ -84,40 +83,21 @@ article > footer > div.social {
     margin: 0; padding: 0 0.6em;
 }
 
-article { padding: 10px 0; }
-article > header > h1
-{
-    font-size: 1.9em;
-}
-article > header > h1 > a,
-article h2 > a
+section.content h1 { font-size: 2em; margin-bottom: 5px; }
 
-{
+article h2 > a {
     color: #000;
     transition-property: color text-shadow;
     transition-duration: .2s;
     -webkit-transition-property: color text-shadow;
     -webkit-transition-duration: .2s;
 }
-article > header > h1 > a:hover,
-article h2 > a:hover{
-    color: #F36C00;
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
-}
-article > div.summary {
-    margin: 20px 15px;
-}
-article > div.content {
-    margin: 0 15px;
-}
-article > footer {
-    font-size: 0.8em;
-    margin: 0 15px;
-    color: #666;
-}
-article h2 {
-    margin: 5px 0;
-}
+article h2 > a:hover { color: #F36C00; text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); }
+article > div.summary { margin: 20px 15px; }
+article > div.content { margin: 0 15px; }
+article > footer { font-size: 0.8em; margin: 0 15px; color: #666; }
+article h2 { margin: 5px 0; }
+article > div.content { margin-bottom: 20px; }
 
 p.paginator { text-align: right; }
 
@@ -129,7 +109,7 @@ p.paginator { text-align: right; }
 
 ul.socialbtn { list-style-type: none; padding: 0; margin: 0 0 10px 0; }
 
-ul.social { margin-top: 20px; padding: 5px 0 5px 5px; }
+ul.social { margin-top: 20px; padding: 5px 0 5px 5px; width: 75%; }
 ul.social > li { display: inline-block; }
 ul.social > li > a { width: 32px; height: 32px; display: inline-block; background-repeat: no-repeat; opacity: 0.3; transition-property: opacity; transition-duration: .5s; -webkit-transition-property: opacity; -webkit-transition-duration: .5s; }
 ul.social a:hover { opacity: 1; } 
@@ -138,14 +118,13 @@ ul.social a:hover { opacity: 1; }
 ul.social a[href*='github.com'],
 ul.social a[href*='git.io'] {background-image: url('../images/icons/github.png');}
 ul.social a[href*='linkedin.com'] {background-image: url('../images/icons/linkedin.png');}
-
-/* TODO */
+ul.social a[href*='mailto:'] { background-image: url('../images/icons/email.png'); }
 ul.social a[href*='delicious.com'] {background-image: url('../images/icons/delicious.png');}
 ul.social a[href*='digg.com'] {background-image: url('../images/icons/digg.png');}
 ul.social a[href*='facebook.com'] {background-image: url('../images/icons/facebook.png');}
 ul.social a[href*='last.fm'], .social a[href*='lastfm.'] {background-image: url('../images/icons/lastfm.png');}
 ul.social a[type$='atom+xml'], .social a[type$='rss+xml'] {background-image: url('../images/icons/rss.png');}
 ul.social a[href*='twitter.com'] {background-image: url('../images/icons/twitter.png');}
-ul.social a[href*='gitorious.org'] {background-image: url('../images/icons/gitorious.png');}
-ul.social a[href*='gittip.com'] {background-image: url('../images/icons/gittip.png');}
 ul.social a[href*='plus.google.com'] {background-image: url('../images/icons/google-plus.png');}
+ul.social a[href*='stackexchange.com'] {background-image: url('../images/icons/stack-exchange.png');}
+ul.social a[href*='grooveshark.com'] {background-image: url('../images/icons/grooveshark.png');}

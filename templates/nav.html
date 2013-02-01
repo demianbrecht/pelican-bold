@@ -13,9 +13,9 @@
         {% endfor %}
     </ul>
     {% endif %}
-    <ul class="social">
-    {% for link in SOCIAL %}
-        <li><a href="{{ link[1] }}" target="new"></a></li>
+    <ul class="social rfloat">
+    {% for name, uri in SOCIAL %}
+        <li><a title="{{ name }}" href="{{ uri }}" target="new"></a></li>
     {% endfor %}
     </ul>
 </nav>
