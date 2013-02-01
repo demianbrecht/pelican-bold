@@ -4,6 +4,7 @@
         {% block head %}
         <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
         <meta charset="utf-8" />
+        <meta http-equiv="cache-control" content="no-cache" />
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/base.css" media="all" />
         <meta name="author" value="{% block meta_author %}{{ AUTHOR }}{% endblock %}" />
         <meta name="description" value="{% block meta_description %}{% endblock %}" />

@@ -44,7 +44,7 @@ nav > ul.links > li:nth-child(odd) { transform: rotate(-3deg); -webkit-transform
 nav > ul.links > li:nth-child(even) { transform: rotate(3deg); -webkit-transform: rotate(3deg); }
 
 /******* FOOTER ********/
-footer.site { width: 740px; float: right; background-color: #000; margin-top: 50px; color: #fff; padding: 20px; -webkit-transform: rotate(3deg); transform: rotate(3deg); }
+footer.site { width: 740px; float: right; background-color: #000; margin-top: 50px; color: #fff; padding: 20px; -webkit-transform: rotate(1deg); transform: rotate(1deg); }
 footer.site section.lfloat { margin-right: 50px; }
 footer.site ul { list-style-type: none; margin: 0; padding: 0; }
 footer.site ul lh { line-height: 1.5em; } 
@@ -59,6 +59,7 @@ ol.article-list {
     margin: 0; padding: 0;
 }
 ol.article-list > li { border-bottom: 1px solid #ccc; }
+ol.article-list > li > article > footer { margin: 0 15px !important; }
 
 ul.tags {
     list-style-type: none;
@@ -92,7 +93,7 @@ article h2 > a {
 article h2 > a:hover { color: #F36C00; text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2); }
 article > div.summary { margin: 20px 15px; }
 article > div.content { margin: 0 15px; }
-article > footer { font-size: 0.8em; margin: 0 15px; color: #666; }
+article > footer { font-size: 0.8em; margin: 20px 15px; color: #666; }
 article h2 { margin: 5px 0; }
 article > div.content { margin-bottom: 20px; }
 
