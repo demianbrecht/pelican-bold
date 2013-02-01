@@ -4,8 +4,11 @@
         {% block head %}
         <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
         <meta charset="utf-8" />
-        {% endblock head %}
-        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/base.css" />
+        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/base.css" media="all" />
+        <meta name="author" value="{% block meta_author %}{{ AUTHOR }}{% endblock %}" />
+        <meta name="description" value="{% block meta_description %}{% endblock %}" />
+        <meta name="keywords" value="{% block meta_keywords %}{% endblock %}" />
+        {% endblock %}
     </head>
     <body>
         <header class="site">
