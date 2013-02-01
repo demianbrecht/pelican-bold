@@ -8,15 +8,15 @@
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/base.css" />
     </head>
     <body>
-        <div class="wrapper">
-            <header class="site-title">
-                {% if SITESUBTITLES %}
-                    <h1 class="stamp lrot">{{ SITESUBTITLES[0] }}</h1>
-                    <h1 class="stamp rrot rfloat">{{ SITESUBTITLES[1] }}</h1>
-                {% else %}
-                    <h1 class="stamp lrot">{{ SITESUBTITLE }}</h1>
-                {% endif %}
-            </header>
+        <header class="site">
+            {% if SITESUBTITLES %}
+                <h1 class="stamp lrot bs">{{ SITESUBTITLES[0] }}</h1>
+                <h1 class="stamp rrot rfloat">{{ SITESUBTITLES[1] }}</h1>
+            {% else %}
+                <h1 class="stamp lrot">{{ SITESUBTITLE }}</h1>
+            {% endif %}
+        </header>
+        <div class="site clearfix">
             {% include 'nav.html' %}
             <section class="content">
                 <h1 class="stamp">{% block section_title %}{% endblock %}</h1>
@@ -25,9 +25,7 @@
                 </div>
             </section>
         </div>
-        <footer class="site">
-            {% include 'footer.html' %}
-        </footer>
+        {% include 'footer.html' %}
         {% include 'analytics.html' %}
     </body>
 </html>

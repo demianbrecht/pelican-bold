@@ -23,11 +23,13 @@ body > div.wrapper {
     min-height: 100%;
 }
 
+.bs { box-shadow: 3px 3px 5px rgba(0,0,0,0.4); }
+.site { width: 1000px; margin: 0 auto; }
+
 /******** HEADER ********/
-header.site-title { padding: 50px 0 100px 0; }
-header.site-title > h1 { font-size: 4em; }
-header.site-title > h1:nth-child(1) { box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.3); }
-header.site-title > h1:nth-child(2) { position: relative; z-index: -1; top: -5px; text-align: right; }
+header.site { padding: 50px 0 100px 0; }
+header.site > h1 { font-size: 4em; }
+header.site > h1:nth-child(2) { position: relative; z-index: -1; top: -5px; text-align: right; }
 
 /******* NAV ********/
 nav { width: 200px; text-align: right; }
@@ -42,19 +44,14 @@ nav > ul.links > li:nth-child(odd) { transform: rotate(-3deg); -webkit-transform
 nav > ul.links > li:nth-child(even) { transform: rotate(3deg); -webkit-transform: rotate(3deg); }
 
 /******* FOOTER ********/
-footer.site { position: relative; top: -150px; height: 150px; background-color: #000; color: #fff; }
-footer.site > div { width: 1000px; margin: 0 auto; padding-top: 20px; }
+footer.site { width: 900px; background-color: #000; margin: 50px auto; color: #fff; padding: 20px; -webkit-transform: rotate(3deg); transform: rotate(3deg); }
 footer.site section.lfloat { margin-right: 50px; }
 footer.site ul { list-style-type: none; margin: 0; padding: 0; }
 footer.site ul lh { line-height: 1.5em; } 
 footer.site p { margin: 0; padding: 0; }
-footer.site { font-size: 0.9em; }
+footer.site { font-size: 0.8em; }
 
-
-section.content {
-    margin-left: 220px;
-    padding-bottom: 170px;
-}
+section.content { margin-left: 220px; }
 section.content > div.body { margin: 0 10px; }
 
 ol.article-list {
