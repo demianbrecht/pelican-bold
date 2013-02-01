@@ -44,7 +44,7 @@ nav > ul.links > li:nth-child(odd) { transform: rotate(-3deg); -webkit-transform
 nav > ul.links > li:nth-child(even) { transform: rotate(3deg); -webkit-transform: rotate(3deg); }
 
 /******* FOOTER ********/
-footer.site { width: 900px; background-color: #000; margin: 50px auto; color: #fff; padding: 20px; -webkit-transform: rotate(3deg); transform: rotate(3deg); }
+footer.site { width: 740px; float: right; background-color: #000; margin-top: 50px; color: #fff; padding: 20px; -webkit-transform: rotate(3deg); transform: rotate(3deg); }
 footer.site section.lfloat { margin-right: 50px; }
 footer.site ul { list-style-type: none; margin: 0; padding: 0; }
 footer.site ul lh { line-height: 1.5em; } 
