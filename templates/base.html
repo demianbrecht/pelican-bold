@@ -10,6 +10,9 @@
         <meta name="description" value="{% block meta_description %}{% endblock %}" />
         <meta name="keywords" value="{% block meta_keywords %}{% endblock %}" />
         {% endblock %}
+        {% if PYGMENTS_CSS %}
+        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/{{ PYGMENTS_CSS }}.css" media="all" />
+        {% endif %}
     </head>
     <body>
         <header class="site">
@@ -24,6 +27,11 @@
             {% include 'nav.html' %}
             <section class="content">
                 <h1 class="stamp">{% block section_title %}{% endblock %}</h1>
+                {% if category and CATEGORY_FEED_ATOM %}
+                    <a href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category) }}" class="feed"><img src="/theme/images/icons/rss.png"/></a>
+                {% elif tag and TAG_FEED_ATOM %}
+                    <a href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(category) }}" class="feed"<img src="/theme/images/icons/rss.png"/></a>
+                {% endif %}
                 <div class="body">
                     {% block content %}{% endblock %}
                 </div>

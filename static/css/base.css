@@ -61,19 +61,14 @@ ol.article-list {
 ol.article-list > li { border-bottom: 1px solid #ccc; }
 ol.article-list > li > article > footer { margin: 0 15px !important; }
 
-ul.tags {
-    list-style-type: none;
-    margin: 0; padding: 0;
-}
-ul.tags > li {
-    display: inline-block;
-    margin-left: 5px;
-}
+ul.tags { list-style-type: none; margin: 0; padding: 0; }
+ul.tags > li { display: inline-block; margin-left: 3px; }
+ul.tags > li:after { content: ', '; }
+ul.tags > li:last-child:after { content: ''; }
 
 article > footer > div.social {
     margin-bottom: 10px;
 }
-article > div.content > div.section > h2 { margin: 20px 0 0 0; }
 
 .stamp {
     background-color: #000;
@@ -126,3 +121,12 @@ ul.social a[href*='twitter.com'] {background-image: url('../images/icons/twitter
 ul.social a[href*='plus.google.com'] {background-image: url('../images/icons/google-plus.png');}
 ul.social a[href*='stackexchange.com'] {background-image: url('../images/icons/stack-exchange.png');}
 ul.social a[href*='grooveshark.com'] {background-image: url('../images/icons/grooveshark.png');}
+a.feed > img { position: relative; top: 5px; }
+
+pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
