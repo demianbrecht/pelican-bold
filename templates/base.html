@@ -5,17 +5,14 @@
         <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
         <meta charset="utf-8" />
         <meta http-equiv="cache-control" content="no-cache" />
-        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/base.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/base.css" />
         <meta name="author" value="{% block meta_author %}{{ AUTHOR }}{% endblock %}" />
         <meta name="description" value="{% block meta_description %}{% endblock %}" />
         <meta name="keywords" value="{% block meta_keywords %}{% endblock %}" />
         {% endblock %}
-        {% if PYGMENTS_CSS %}
-        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/{{ PYGMENTS_CSS }}.css" media="all" />
-        {% endif %}
     </head>
     <body>
-        <header class="site">
+        <header class="site highlight">
             {% if SITESUBTITLES %}
                 <h1 class="stamp lrot bs">{{ SITESUBTITLES[0] }}</h1>
                 <h1 class="stamp rrot rfloat">{{ SITESUBTITLES[1] }}</h1>

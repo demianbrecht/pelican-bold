@@ -1,5 +1,10 @@
 <nav class="lfloat">
     <ul class="links">
+    {% for title, uri in MENUITEMS %}
+    <li>
+        <a class="stamp" href="{{ uri }}">{{ title }}</a>
+    </li>
+    {% endfor %}
     {% for cat, _ in categories %}
     <li{% if cat == category %} class="active"{% endif %}>
         <a {% if not cat == category %}class="stamp"{% endif %} href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
