@@ -11,7 +11,7 @@
     </li>
     {% endfor %}
     {% if DISPLAY_PAGES_ON_MENU %}
-        {% for p in pages|sort(attribute='filename') %}
+        {% for p in pages|sort(attribute='source_path') %}
             <li{% if page and p.title == page.title %} class="active"{% endif %}>
                 <a{% if not page or not p.title == page.title %} class="stamp"{% endif %} href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a>
             </li>
